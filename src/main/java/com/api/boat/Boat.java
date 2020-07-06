@@ -66,6 +66,8 @@ public class Boat {
      * @param commands
      */
     public void navigate(String commands) {
+        System.out.println("[Start Navigation]");
+        System.out.println("Boat's initial position is (" + this.x + "," + this.y + "), facing " + compass.get(0));
         List<String> commandList = Arrays.asList(commands.split(""));
 
         for (String str : commandList) {
@@ -86,6 +88,7 @@ public class Boat {
 
             System.out.println("Boat's current position is (" + this.x + "," + this.y + "), facing " + compass.get(0));
         }
+        System.out.println("[End Navigation]");
     }
 
     /**
