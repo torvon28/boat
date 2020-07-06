@@ -7,13 +7,13 @@ public enum Direction {
     W(-1);
 
     // increment value for the boat to move forward.
-    private int incrementValue;
+    private int axis;
 
-    private Direction(int incrementValue) {
-        this.incrementValue = incrementValue;
+    private Direction(int axis) {
+        this.axis = axis;
     }
 
-    public int getIncrementValue() {
-        return this.incrementValue;
+    public int getAxis() {
+        return this.axis;
     }
 }
