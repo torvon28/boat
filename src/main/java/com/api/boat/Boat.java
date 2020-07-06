@@ -93,10 +93,10 @@ public class Boat {
     private void move(String movement) {
         switch(movement) {
             case FORWARD:
-                move(compass.get(0).getIncrementValue());
+                move(1);
                 break;
             case BACKWARD:
-            move(compass.get(0).getIncrementValue() * -1);
+                move(-1);
                 break;
             default:
                 break;
@@ -105,21 +105,18 @@ public class Boat {
 
     /**
      * Move the boat forward to the direction it is currently facing.
+     * @param mode - (-1) - backward, (1) - forward
      */
-    private void move(int incrementValue) {
+    private void move(int mode) {
         Direction direction = compass.get(0);
         switch(direction) {
             case N:
-                this.y = this.y + incrementValue;
+            case S:
+                this.y = this.y + direction.getAxis() * mode;
                 break;
             case E:
-                this.x = this.x + incrementValue;
-                break;
             case W:
-                this.x = this.x - incrementValue;
-                break;
-            case S:
-                this.y = this.y - incrementValue;
+                this.x = this.x + direction.getAxis() * mode;
                 break;
             default:
                 break;
