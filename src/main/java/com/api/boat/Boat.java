@@ -83,6 +83,8 @@ public class Boat {
                 default:
                     break;
             }
+
+            System.out.println("Boat's current position is (" + this.x + "," + this.y + "), facing " + compass.get(0));
         }
     }
 
@@ -146,7 +148,6 @@ public class Boat {
      */
     private void turn(int distance) {
         Collections.rotate(compass, distance);
-        System.out.println("The boat is currently facing " + compass.get(0));
     }
     
 }
